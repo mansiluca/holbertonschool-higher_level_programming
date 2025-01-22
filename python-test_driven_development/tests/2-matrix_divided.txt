@@ -1,0 +1,63 @@
+The ``matrix_divided`` module
+===============================
+
+Using ``matrix_divided`` module
+-------------------------------
+
+Import function from module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test basic division:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test division by zero:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+Test non-numeric divisor:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, "a")
+    Traceback (most recent call last):
+        ...
+    TypeError: divisor must be a number
+
+Test non-numeric matrix element:
+    >>> matrix = [[1, 2, 3], [4, '5', 6]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix with rows of different sizes:
+    >>> matrix = [[1, 2, 3], [4, 5]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+Test empty matrix:
+    >>> matrix = []
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    ValueError: matrix cannot be empty
+
+Test matrix with single row:
+    >>> matrix = [[1, 2, 3]]
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0, 1.5]]
+
+Test matrix with single column:
+    >>> matrix = [[1], [2], [3]]
+    >>> matrix_divided(matrix, 2)
+    [[0.5], [1.0], [1.5]]
+
+Test matrix with negative numbers:
+    >>> matrix = [[-1, -2, -3], [-4, -5, -6]]
+    >>> matrix_divided(matrix, -2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]

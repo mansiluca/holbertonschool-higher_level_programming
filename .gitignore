@@ -38,3 +38,15 @@ python-exceptions/3-main.py
 python-exceptions/4-main.py
 python-exceptions/5-main.py
 .vscode/settings.json
+python-test_driven_development/.DS_Store
+.DS_Store
+python-test_driven_development/tests/5-text_indentation.txt
+python-test_driven_development/__pycache__/3-say_my_name.cpython-312.pyc
+python-test_driven_development/__pycache__/0-add_integer.cpython-312.pyc
+python-test_driven_development/__pycache__/2-matrix_divided.cpython-312.pyc
+python-test_driven_development/6-main.py
+python-test_driven_development/5-main.py
+python-test_driven_development/4-main.py
+python-test_driven_development/3-main.py
+python-test_driven_development/2-main.py
+python-test_driven_development/6-max_integer.py
