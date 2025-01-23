@@ -1,31 +1,42 @@
-#!/usr/bin/python3
-"""
-Module for text_indentation
-"""
-
-
 def text_indentation(text):
     """
     Prints a text with 2 new lines after each '.', '?', or ':'.
+    
     Args:
-        text: string
+        text (str): The text to process.
+    
     Raises:
-        TypeError: if text is not a string
+        TypeError: If text is not a string.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    characters = ['.', '?', ':']
+    punctuation = ".?:"
+
     result = ""
-    skip_spaces = False
+    skip_spaces = True
 
     for char in text:
-        if skip_spaces and char == ' ':
-            continue
-        skip_spaces = False
-        result += char
-        if char in characters:
+        if char == '\n':
+            result += '\n'
+            skip_spaces = True
+
+        elif char in punctuation:
+            while result and result[-1] == ' ':
+                result = result[:-1]
+            result += char
             result += "\n\n"
             skip_spaces = True
 
-    print(result.strip(), end="")
+        elif char == ' ':
+            if not skip_spaces:
+                result += ' '
+        else:
+            result += char
+            skip_spaces = False
+
+    lines = result.split('\n')
+    stripped_lines = [line.strip() for line in lines]
+    final_result = "\n".join(stripped_lines)
+
+    print(final_result, end="")
