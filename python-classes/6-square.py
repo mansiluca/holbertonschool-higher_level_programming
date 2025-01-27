@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This module defines a Square class that represents a square with a specific size and position.
-The Square class includes methods to calculate the area of the square and to print the square
+This module defines a Square class that represents
+a square with a specific size and position.
+The Square class includes methods to calculate
+the area of the square and to print the square
 with the specified position.
 """
 
