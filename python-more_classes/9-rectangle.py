@@ -10,11 +10,13 @@ class Rectangle:
 
     Attributes:
         number_of_instances (int): The number of Rectangle instances created.
-        print_symbol (any): Symbol used for string representation of the rectangle.
+        print_symbol (any): Symbol used for string
+        representation of the rectangle.
 
     Methods:
         __init__(self, width=0, height=0):
-            Initializes a new Rectangle instance with specified width and height.
+            Initializes a new Rectangle instance
+            with specified width and height.
         width(self):
             Getter for the width attribute.
         width(self, value):
@@ -28,15 +30,18 @@ class Rectangle:
         perimeter(self):
             Calculates and returns the perimeter of the rectangle.
         __str__(self):
-            Returns the string representation of the rectangle using the print_symbol.
+            Returns the string representation of the rectangle
+            using the print_symbol.
         __repr__(self):
             Returns the official string representation of the rectangle.
         __del__(self):
             Destructor that decrements the instance count and prints a message.
         bigger_or_equal(rect_1, rect_2):
-            Static method that returns the rectangle with the greater or equal area.
+            Static method that returns the
+            rectangle with the greater or equal area.
         square(cls, size=0):
-            Class method that returns a new Rectangle instance with width and height equal to size.
+            Class method that returns a new Rectangle
+            instance with width and height equal to size.
     """
     number_of_instances = 0
     print_symbol = "#"
