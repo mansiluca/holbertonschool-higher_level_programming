@@ -1,6 +1,25 @@
 #!/usr/bin/python3
+"""
+Class Rectangle
+"""
+
 
 class Rectangle:
+    """
+    This module defines the Rectangle class, which represents a 2D rectangle
+    with integer width and height attributes. The class provides property
+    setters to enforce that width and height are integers and are not set
+    to negative values.
+
+    Attributes:
+        width (int): The width of the rectangle. Defaults to 0.
+        height (int): The height of the rectangle. Defaults to 0.
+
+    Raises:
+        TypeError: If width or height is not an integer.
+        ValueError: If width or height is a negative value.
+    """
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
