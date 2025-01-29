@@ -5,6 +5,39 @@ Class Rectangle
 
 
 class Rectangle:
+    """
+    Rectangle class that defines a rectangle by its width and height.
+
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances created.
+        print_symbol (any): Symbol used for string representation of the rectangle.
+
+    Methods:
+        __init__(self, width=0, height=0):
+            Initializes a new Rectangle instance with specified width and height.
+        width(self):
+            Getter for the width attribute.
+        width(self, value):
+            Setter for the width attribute with validation.
+        height(self):
+            Getter for the height attribute.
+        height(self, value):
+            Setter for the height attribute with validation.
+        area(self):
+            Calculates and returns the area of the rectangle.
+        perimeter(self):
+            Calculates and returns the perimeter of the rectangle.
+        __str__(self):
+            Returns the string representation of the rectangle using the print_symbol.
+        __repr__(self):
+            Returns the official string representation of the rectangle.
+        __del__(self):
+            Destructor that decrements the instance count and prints a message.
+        bigger_or_equal(rect_1, rect_2):
+            Static method that returns the rectangle with the greater or equal area.
+        square(cls, size=0):
+            Class method that returns a new Rectangle instance with width and height equal to size.
+    """
     number_of_instances = 0
     print_symbol = "#"
 
