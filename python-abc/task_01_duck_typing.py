@@ -16,6 +16,7 @@ class Shape(ABC):
         """
         pass
 
+    @abstractmethod
     def perimeter(self):
         """
         perimeter method
@@ -76,7 +77,5 @@ def shape_info(shape):
     """
     shape_info function
     """
-    if not isinstance(shape, Shape):
-        raise TypeError("shape is not an instance of Shape")
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
