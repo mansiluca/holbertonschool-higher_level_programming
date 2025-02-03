@@ -19,7 +19,7 @@ class BaseGeometry:
         """
         Method that validates value
         """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
@@ -48,15 +48,6 @@ class Rectangle(BaseGeometry):
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
-    def print(self):
-        """
-        Method that prints the rectangle
-        """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
-            print()
-
 
 class Square(Rectangle):
     """
@@ -65,8 +56,8 @@ class Square(Rectangle):
 
     def __init__(self, size):
         self.integer_validator("size", size)
-        self.__size = size
         super().__init__(size, size)
+        self.__size = size
 
     def area(self):
         """ Method that returns the area of the square """
@@ -80,7 +71,6 @@ class Square(Rectangle):
         """
         Method that prints the square
         """
-        for i in range(self.__size):
-            for j in range(self.__size):
-                print("#", end="")
-            print()
+
+        for _ in range(self.__size):
+            print("#" * self.__size)

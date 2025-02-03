@@ -3,10 +3,12 @@
 Module for testing the BaseGeometry class
 """
 
+
 class BaseGeometry:
     """
     A class with a method
     """
+
     def area(self):
         """
         Method that raises an exception
