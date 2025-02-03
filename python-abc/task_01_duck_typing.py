@@ -35,7 +35,7 @@ class Circle(Shape):
         """
         Initializes a new Circle instance.
         """
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         """
