@@ -35,8 +35,6 @@ class Circle(Shape):
         """
         Initializes a new Circle instance.
         """
-        if not isinstance(radius, (int, float)):
-            raise TypeError("radius must be a number")
         self.__radius = radius
 
     def area(self):
@@ -61,11 +59,6 @@ class Rectangle(Shape):
         """
         Initializes a new Rectangle instance.
         """
-        if not isinstance(width, (int, float)) or width <= 0:
-            raise TypeError("width must be a positive number")
-        if not isinstance(height, (int, float)) or height <= 0:
-            raise TypeError("height must be a positive number")
-
         self.__width = width
         self.__height = height
 
