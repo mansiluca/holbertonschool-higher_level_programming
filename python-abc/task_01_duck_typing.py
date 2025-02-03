@@ -38,13 +38,13 @@ class Circle(Shape):
         """
         area method
         """
-        return 3.14159265359 * self.__radius ** 2
+        return 3.141592653589793 * self.__radius ** 2
 
     def perimeter(self):
         """
         perimeter method
         """
-        return 2 * 3.14159265359 * self.__radius
+        return 2 * 3.141592653589793 * self.__radius
 
 
 class Rectangle(Shape):
