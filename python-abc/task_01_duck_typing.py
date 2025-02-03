@@ -27,6 +27,7 @@ class Circle(Shape):
     """
     Class Circle
     """
+
     def __init__(self, radius):
         """
         Initializes a new Circle instance.
@@ -50,6 +51,7 @@ class Rectangle(Shape):
     """
     Class Rectangle
     """
+
     def __init__(self, width, height):
         """
         Initializes a new Rectangle instance.

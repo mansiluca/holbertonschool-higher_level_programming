@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Class Fish
+"""
+
 
 class Fish:
     """
