@@ -19,10 +19,10 @@ class BaseGeometry:
         """
         Method that validates value
         """
-        if not isinstance(value, int):
-            raise TypeError(name + " must be an integer")
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(name + " must be greater than 0")
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
@@ -56,12 +56,12 @@ class Square(Rectangle):
 
     def __init__(self, size):
         self.integer_validator("size", size)
-        super().__init__(size, size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         """ Method that returns the area of the square """
-        return self.__size * self.__size
+        return self.__size ** 2
 
     def __str__(self):
         """ Method that returns the square description"""
