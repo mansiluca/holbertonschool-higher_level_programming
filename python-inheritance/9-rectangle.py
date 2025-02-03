@@ -47,12 +47,3 @@ class Rectangle(BaseGeometry):
         Method that returns the rectangle description
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
-    def print(self):
-        """
-        Method that prints the rectangle
-        """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
-            print()

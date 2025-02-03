@@ -70,7 +70,7 @@ class Square(Rectangle):
 
     def area(self):
         """ Method that returns the area of the square """
-        return super().area()
+        return self.__size * self.__size
 
     def __str__(self):
         """ Method that returns the square description"""

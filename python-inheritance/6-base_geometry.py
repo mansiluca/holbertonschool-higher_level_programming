@@ -3,9 +3,12 @@
 Module for testing the BaseGeometry class
 """
 
-
-def area(self):
+class BaseGeometry:
     """
-    Method that raises an Exception with the message
+    A class with a method
     """
-    raise Exception("area() is not implemented")
+    def area(self):
+        """
+        Method that raises an exception
+        """
+        raise Exception("area() is not implemented")
