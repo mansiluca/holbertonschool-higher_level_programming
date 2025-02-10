@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module for add_item
+"""
+
+
 from sys import argv
 from os import path
 

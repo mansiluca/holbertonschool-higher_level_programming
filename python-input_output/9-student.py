@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module for 9-student
+"""
+
+
 class Student:
     """
     class Student that defines a student by:
@@ -6,6 +11,7 @@ class Student:
     - last_name
     - age
     """
+
     def __init__(self, first_name, last_name, age):
         """
         constructor
