@@ -30,12 +30,15 @@ class CustomObject:
         Serializes an object to a text file, using a JSON representation
         """
         import json
-        with open(filename, 'w') as file:
-            json.dump({
-                'name': self.name,
-                'age': self.age,
-                'is_student': self.is_student
-            }, file)
+        try:
+            with open(filename, 'w') as file:
+                json.dump({
+                    'name': self.name,
+                    'age': self.age,
+                    'is_student': self.is_student
+                }, file)
+        except Exception:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -43,7 +46,10 @@ class CustomObject:
         Deserializes a JSON representation from a text file
         """
         import json
-        with open(filename, 'r') as file:
-            data = json.load(file)
-        obj = cls(data['name'], data['age'], data['is_student'])
-        return obj
+        try:
+            with open(filename, 'r') as file:
+                data = json.load(file)
+            obj = cls(data['name'], data['age'], data['is_student'])
+            return obj
+        except Exception:
+            return None

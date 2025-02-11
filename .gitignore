@@ -104,3 +104,4 @@ python-serialization/__pycache__/task_02_csv.cpython-312.pyc
 python-serialization/__pycache__/task_03_xml.cpython-312.pyc
 .gitignore
 python-serialization/data.xml
+python-serialization/main.py
