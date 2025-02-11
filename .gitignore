@@ -96,3 +96,11 @@ python-abc/__pycache__/task_01_duck_typing.cpython-312.pyc
 python-input_output/0-main.py
 python-input_output/add_item.json
 python-input_output/my_file_0.txt
+python-serialization/object.pkl
+python-serialization/data.json
+python-serialization/data.csv
+python-serialization/__pycache__/task_01_pickle.cpython-312.pyc
+python-serialization/__pycache__/task_02_csv.cpython-312.pyc
+python-serialization/__pycache__/task_03_xml.cpython-312.pyc
+.gitignore
+python-serialization/data.xml
