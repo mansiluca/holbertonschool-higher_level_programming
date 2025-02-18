@@ -105,3 +105,8 @@ python-serialization/__pycache__/task_03_xml.cpython-312.pyc
 .gitignore
 python-serialization/data.xml
 python-serialization/main.py
+restful-api/__pycache__/test_task_04_flask.cpython-312-pytest-8.3.4.pyc
+restful-api/__pycache__/task_04_flask.cpython-313.pyc
+restful-api/__pycache__/task_04_flask.cpython-312.pyc
+restful-api/test_task_04_flask.py
+restful-api/posts.csv
