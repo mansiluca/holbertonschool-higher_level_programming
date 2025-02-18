@@ -5,8 +5,7 @@ API and prints them to the console
 """
 
 
-from flask import Flask, jsonify
-from flask import request
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -26,7 +25,7 @@ def route_data():
     """
     This function returns a JSON response
     """
-    return jsonify(users)
+    return jsonify(list(users.keys()))
 
 
 @app.route('/info')
@@ -43,8 +42,7 @@ def route_status():
     """
     This function returns a JSON response
     """
-    status = {"status": "OK"}
-    return jsonify(status)
+    return "OK"
 
 
 @app.route('/users/<username>')
