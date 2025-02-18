@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+This module fetches posts from a RESTful
+API and prints them to the console
+"""
+
+
 from flask import Flask, jsonify
 from flask import request
 
