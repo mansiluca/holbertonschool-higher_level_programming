@@ -4,6 +4,7 @@ This module fetches posts from a RESTful API and prints them to the console
 or saves them to a file.
 """
 
+
 import http.server
 import json
 

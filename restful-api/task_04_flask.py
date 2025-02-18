@@ -8,7 +8,6 @@ API and prints them to the console
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
 users = {}
 
 
