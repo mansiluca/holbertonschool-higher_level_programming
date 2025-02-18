@@ -85,3 +85,7 @@ def add_user():
         }), 201
     else:
         return jsonify({"error": "Request must be JSON"}), 400
+
+
+if __name__ == "__main__":
+    app.run()

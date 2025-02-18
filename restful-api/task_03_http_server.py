@@ -4,10 +4,8 @@ This module fetches posts from a RESTful API and prints them to the console
 or saves them to a file.
 """
 
-
 import http.server
 import json
-import socketserver
 
 
 class RequestHandler(http.server.BaseHTTPRequestHandler):
@@ -23,7 +21,7 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Hello, World!")
+            self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -48,3 +46,10 @@ class RequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"404 Not Found")
+
+
+if __name__ == "__main__":
+    server_address = ('', 8000)
+    httpd = http.server.HTTPServer(server_address, RequestHandler)
+    print("Starting server on port 8000...")
+    httpd.serve_forever()
