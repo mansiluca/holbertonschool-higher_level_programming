@@ -6,7 +6,7 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config['JWT_SECRET_KEY'] = 'c-nul'
+app.config['JWT_SECRET_KEY'] = 'your-strong-secret-key'
 jwt = JWTManager(app)
 
 users = {
@@ -14,10 +14,30 @@ users = {
     "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
 }
 
+@jwt.unauthorized_loader
+def handle_unauthorized_error(_):
+    return jsonify({"error": "Missing or invalid token"}), 401
+
+@jwt.invalid_token_loader
+def handle_invalid_token_error(_):
+    return jsonify({"error": "Invalid token"}), 401
+
+@jwt.expired_token_loader
+def handle_expired_token_error(_):
+    return jsonify({"error": "Token has expired"}), 401
+
+@jwt.revoked_token_loader
+def handle_revoked_token_error(_):
+    return jsonify({"error": "Token has been revoked"}), 401
+
+@jwt.needs_fresh_token_loader
+def handle_needs_fresh_token_error(_):
+    return jsonify({"error": "Fresh token required"}), 401
+
 @auth.verify_password
 def verify_password(username, password):
     if username in users and check_password_hash(users[username]['password'], password):
-        return username
+        return users[username]
     return None
 
 @app.route('/basic-protected')
