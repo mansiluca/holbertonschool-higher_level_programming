@@ -112,3 +112,5 @@ restful-api/test_task_04_flask.py
 restful-api/posts.csv
 restful-api/__pycache__/task_05_basic_security.cpython-312.pyc
 restful-api/test_05.py
+restful-api/task_05_basic_security.py
+restful-api/__pycache__/task_05_basic_security.cpython-313.pyc
