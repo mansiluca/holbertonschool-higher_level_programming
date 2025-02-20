@@ -9,10 +9,7 @@ auth = HTTPBasicAuth()
 app.config['JWT_SECRET_KEY'] = 'your-strong-secret-key'
 jwt = JWTManager(app)
 
-users = {
-    "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
-    "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
-}
+users = {}
 
 @jwt.unauthorized_loader
 def handle_unauthorized_error(_):
