@@ -12,7 +12,6 @@ meta_data = MetaData()
 Base = declarative_base(metadata=meta_data)
 
 
-
 class State(Base):
     """
     Class State that inherits from Base
