@@ -115,3 +115,6 @@ restful-api/test_05.py
 restful-api/task_05_basic_security.py
 restful-api/__pycache__/task_05_basic_security.cpython-313.pyc
 python-object_relational_mapping/4.sql
+python-object_relational_mapping/6-model_state.py
+python-object_relational_mapping/__pycache__/model_state.cpython-313.pyc
+python-object_relational_mapping/__pycache__/model_state.cpython-312.pyc
