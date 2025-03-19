@@ -13,36 +13,35 @@ def generate_invitations(template, attendees):
         attendees (list): List of dictionaries containing attendee information
     """
     if not isinstance(template, str):
-        print(
-            f"Error: Template must be a string, got {
-                type(template).__name__} instead.")
-        return
-
-    if not isinstance(attendees, list) or not all(
-            isinstance(attendee, dict) for attendee in attendees):
-        print(
-            f"Error: Attendees must be a list of dictionaries, got {
-                type(attendees).__name__} instead.")
-        return
-
+        print("Error: template must be a string")
+        return []
+    
+    if not isinstance(attendees, list):
+        print("Error: attendees must be a list of dictionaries")
+        return []
+    
+    if not all(isinstance(attendee, dict) for attendee in attendees):
+        print("Error: all attendees must be dictionaries")
+        return []
+    
     if not template:
         print("Template is empty, no output files generated.")
-        return
-
+        return []
+    
     if not attendees:
         print("No data provided, no output files generated.")
-        return
+        return []
 
-    for idx, attendee in enumerate(attendees, start=1):
-        processed_template = template
-
-        placeholders = ['name', 'event_title', 'event_date', 'event_location']
-        for placeholder in placeholders:
-            placeholder_pattern = '{' + placeholder + '}'
-            placeholder_value = attendee.get(placeholder, "N/A")
-            processed_template = processed_template.replace(
-                placeholder_pattern, str(placeholder_value))
-
-        output_filename = f"output_{idx}.txt"
-        with open(output_filename, 'w') as output_file:
-            output_file.write(processed_template)
+    generated_files = []
+    for i, attendee in enumerate(attendees, start=1):
+        filled_template = template
+        for placeholder in ["name", "event_title", "event_date", "event_location"]:
+            value = attendee.get(placeholder, "N/A")
+            filled_template = filled_template.replace(f"{{{placeholder}}}", value)
+        
+        file_name = f"output_{i}.txt"
+        with open(file_name, "w") as f:
+            f.write(filled_template)
+        generated_files.append(file_name)
+    
+    return generated_files
