@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Module for task_00_intro
+"""
 
 def generate_invitations(template, attendees):
     """
