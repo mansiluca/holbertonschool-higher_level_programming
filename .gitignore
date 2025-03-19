@@ -119,3 +119,8 @@ python-object_relational_mapping/6-model_state.py
 python-object_relational_mapping/__pycache__/model_state.cpython-313.pyc
 python-object_relational_mapping/__pycache__/model_state.cpython-312.pyc
 python-object_relational_mapping/7-model_state_fetch_all.sql
+python-server_side_rendering/template.txt
+python-server_side_rendering/output_3.txt
+python-server_side_rendering/output_2.txt
+python-server_side_rendering/output_1.txt
+python-server_side_rendering/0-main.py
