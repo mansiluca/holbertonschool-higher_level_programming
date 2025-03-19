@@ -30,13 +30,13 @@ def items():
 
 @app.route('/products')
 def products():
-    source = 'products.json'
+    source = request.args.get('source')
     if source == 'json':
         with open('products.json') as f:
-            items = load(f).get('items', [])
+            items = load(f)
     elif source == 'csv':
-        with open('products.csv') as f:
-            items = load(f).get('items', [])
+        with open('products.csv') as csvFile:
+            items = [row for row in csv.DictReader(csvFile)]
     else:
         return render_template('product_display.html', message='Invalid source')
     
