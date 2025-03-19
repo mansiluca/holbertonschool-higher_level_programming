@@ -45,26 +45,29 @@ def read_csv_file(file_path):
         return []
 
 
-@app.route('/products')
+@app.route('/products/')
 def products():
-    source = request.args.get('source')
-
-    if source == 'json':
-        items = read_json_file('products.json')
-    elif source == 'csv':
-        items = read_csv_file('products.csv')
+    source = request.args.get("source")
+    product_id = request.args.get("id")
+    if source == "json":
+        with open('products.json') as f:
+            data = load(f)
+            items = data
+    elif source == "csv":
+        with open('products.csv', newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            items = [row for row in reader]
     else:
         return render_template('product_display.html',
-                               message='Invalid source')
+                               error_message="Wrong source")
 
-    if request.args.get('id'):
+    if product_id:
         filtered_items = [item for item in items if str(
-            item.get('id', '')) == request.args.get('id')]
+            item['id']) == product_id]
         if not filtered_items:
-            return render_template(
-                'product_display.html', message='No items found')
+            return render_template('product_display.html',
+                                   error_message="Product not found")
         items = filtered_items
-
     return render_template('product_display.html', items=items)
 
 
