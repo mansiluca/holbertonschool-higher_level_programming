@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 
 from flask import Flask, render_template, request
 from json import load
 import csv
+import sqlite3
+
 
 app = Flask(__name__)
 
@@ -55,8 +56,8 @@ def products():
     elif source == 'csv':
         items = read_csv_file('products.csv')
     elif source == 'sql':
-        import sqlite3
         conn = sqlite3.connect('products.db')
+        conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM Products')
         items = cursor.fetchall()
