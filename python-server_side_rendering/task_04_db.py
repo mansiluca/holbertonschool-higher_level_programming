@@ -50,7 +50,7 @@ def read_csv_file(file_path):
 @app.route('/products')
 def products():
     source = request.args.get('source')
-
+    id = request.args.get('id')
     if source == 'json':
         items = read_json_file('products.json')
     elif source == 'csv':
@@ -60,13 +60,13 @@ def products():
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM Products')
-        items = cursor.fetchall()
+        items = [dict(row) for row in cursor.fetchall()]
         conn.close()        
     else:
         return render_template('product_display.html',
                                error='Wrong source')
 
-    if request.args.get('id'):
+    if id:
         filtered_items = [item for item in items if str(
             item.get('id', '')) == request.args.get('id')]
         if not filtered_items:
