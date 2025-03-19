@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 from flask import Flask, render_template
-import json
+from json import load
 
 app = Flask(__name__)
 
@@ -24,7 +24,7 @@ def contact():
 @app.route('/items')
 def items():
     with open('items.json') as f:
-        items = json.load(f)
+        items = load.get('items', [])
     return render_template('items.html', items=items)
 
 
