@@ -3,6 +3,7 @@
 Module for task_00_intro
 """
 
+
 def generate_invitations(template, attendees):
     """
     Generate personalized invitation files from a template and attendee list.
