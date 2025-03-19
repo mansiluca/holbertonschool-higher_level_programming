@@ -55,14 +55,14 @@ def products():
         items = read_csv_file('products.csv')
     else:
         return render_template('product_display.html',
-                               message='Invalid source')
+                               error='Wrong source')
 
     if request.args.get('id'):
         filtered_items = [item for item in items if str(
             item.get('id', '')) == request.args.get('id')]
         if not filtered_items:
             return render_template(
-                'product_display.html', message='No items found')
+                'product_display.html', error='Product not found')
         items = filtered_items
 
     return render_template('product_display.html', items=items)
